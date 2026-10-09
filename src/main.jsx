@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import './style.css'
 
@@ -13,13 +13,33 @@ function Arrow({ diagonal = false }) { return <span aria-hidden="true" className
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const navRef = useRef(null)
   const closeMenu = () => setMenuOpen(false)
+
+  useEffect(() => {
+    if (!menuOpen) return undefined
+
+    const closeOnOutsideClick = event => {
+      if (!navRef.current?.contains(event.target) && !event.target.closest('.menu-toggle')) closeMenu()
+    }
+    const closeOnEscape = event => {
+      if (event.key === 'Escape') closeMenu()
+    }
+
+    document.addEventListener('pointerdown', closeOnOutsideClick)
+    document.addEventListener('keydown', closeOnEscape)
+    return () => {
+      document.removeEventListener('pointerdown', closeOnOutsideClick)
+      document.removeEventListener('keydown', closeOnEscape)
+    }
+  }, [menuOpen])
+
   return (
     <>
       <header className="topbar">
         <a className="wordmark" href="#home" onClick={closeMenu}><span className="mark">V</span><span>VIKAS<span className="wordmark-light">.DEV</span></span></a>
         <button className="menu-toggle" aria-label="Toggle navigation" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? 'CLOSE −' : 'MENU +'}</button>
-        <nav className={menuOpen ? 'nav nav-open' : 'nav'} aria-label="Main navigation">
+        <nav ref={navRef} className={menuOpen ? 'nav nav-open' : 'nav'} aria-label="Main navigation">
           <a href="#work" onClick={closeMenu}>WORK <span>01</span></a><a href="#about" onClick={closeMenu}>ABOUT <span>02</span></a><a href="#contact" onClick={closeMenu}>CONTACT <span>03</span></a>
           <span className="availability"><i /> 5+ YEARS EXPERIENCE</span>
         </nav>
