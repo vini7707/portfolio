@@ -1,56 +1,17 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4f3ef">
-  <meta name="description" content="A portfolio of selected work, ideas, and experiments.">
-  <title>Vikas Srivastava — Frontend Developer</title>
-  <style>
-    :root{--paper:#f4f3ef;--ink:#1d211e;--muted:#777d76;--green:#395b47;--line:#d9dbd3;--serif:Georgia,'Times New Roman',serif;--sans:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
-    a{color:inherit;text-decoration:none} .wrap{width:min(1120px,calc(100% - 64px));margin:auto}
-    header{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
-    .brand{font-size:14px;font-weight:650;letter-spacing:-.03em}.brand span{color:var(--green)} nav{display:flex;gap:32px;font-size:12px;color:#555c55} nav a:hover,.text-link:hover{color:var(--green)}
-    .availability{font-size:11px;color:#526557;display:flex;gap:9px;align-items:center}.dot{width:7px;height:7px;background:#79a47d;border-radius:50%;box-shadow:0 0 0 4px #e1e9df}
-    .hero{padding:100px 0 104px;display:grid;grid-template-columns:1fr 260px;gap:80px;align-items:end}.eyebrow{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:0 0 28px}.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(54px,8vw,104px);letter-spacing:-.065em;line-height:.99;margin:0;max-width:790px}.hero h1 em{font-weight:400;color:var(--green)}
-    .intro{font-size:15px;line-height:1.75;color:#626861;max-width:560px;margin:30px 0 28px}.actions{display:flex;align-items:center;gap:23px}.button{background:var(--green);color:#fff;padding:14px 19px;font-size:12px;border-radius:2px;transition:transform .2s,background .2s}.button:hover{transform:translateY(-2px);background:#294735}.text-link{font-size:12px;border-bottom:1px solid #9a9e96;padding-bottom:4px}
-    .hero-note{border-left:1px solid var(--line);padding:0 0 5px 24px;color:var(--muted);font-size:12px;line-height:1.7}.hero-note strong{font-weight:500;color:var(--ink);display:block;font-size:13px;margin-bottom:7px}
-    .section-head{display:flex;justify-content:space-between;align-items:end;padding-bottom:17px;border-bottom:1px solid var(--ink);margin-bottom:0}.section-head h2{font-family:var(--serif);font-size:38px;letter-spacing:-.04em;font-weight:400;margin:0}.section-head p{font-size:11px;color:var(--muted);margin:0}
-    .projects{display:grid;grid-template-columns:1fr 1fr;column-gap:24px;row-gap:46px;padding:27px 0 100px}.project{min-width:0}.visual{height:300px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#e5e6df}.visual:after{content:"";position:absolute;inset:0;background:linear-gradient(145deg,transparent 50%,rgba(0,0,0,.08))}.v1{background:#d9e1d7}.v2{background:#e8ddd0}.v3{background:#d9dce0}.v4{background:#e4e2d6}
-    .mock{width:68%;height:70%;background:#f8f8f5;box-shadow:0 20px 55px #24352c22;position:relative;z-index:1;padding:18px;display:flex;flex-direction:column}.mock-top{height:7px;width:38%;background:#d8ddd5;border-radius:8px;margin-bottom:17px}.mock-title{font-family:var(--serif);font-size:clamp(18px,3vw,33px);line-height:1.05;letter-spacing:-.04em;max-width:80%}.mock-lines{margin-top:auto;display:flex;gap:7px}.mock-lines i{display:block;background:#e6e8e1;height:34px;flex:1}.m-green{background:#526b59!important}.v2 .mock{width:61%;height:76%;background:#f4ede4;transform:rotate(-3deg);padding:25px}.v2 .mock-title{font-size:30px}.v3 .mock{width:73%;height:68%;background:#252a28;padding:20px}.v3 .mock-title{color:#f4f3ef}.v3 .mock-lines i{background:#3c4640}.v4 .mock{width:70%;height:65%;background:#e8e2d5}.v4 .mock-title{font-size:29px;color:#3b4b40}
-    .project-meta{display:flex;justify-content:space-between;gap:14px;padding-top:15px}.project h3{font-family:var(--serif);font-size:22px;font-weight:400;letter-spacing:-.025em;margin:0 0 6px}.project p{font-size:11px;color:var(--muted);margin:0}.year{font-size:11px;color:var(--muted);padding-top:5px;white-space:nowrap}
-    .about{padding:72px 0 77px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1.3fr;gap:80px}.about h2{font-family:var(--serif);font-weight:400;font-size:38px;letter-spacing:-.04em;margin:0}.about-copy{max-width:550px}.about-copy p{font-size:14px;line-height:1.8;color:#626861;margin:0 0 18px}.skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:27px}.skills span{border:1px solid var(--line);padding:9px 12px;font-size:10px;color:#545b54}
-    .contact{background:#e8e9e2;padding:68px 0 76px}.contact-inner{display:flex;justify-content:space-between;gap:35px;align-items:end}.contact h2{font-family:var(--serif);font-weight:400;font-size:clamp(38px,5vw,60px);line-height:1.04;letter-spacing:-.05em;margin:0;max-width:560px}.contact p{font-size:12px;color:var(--muted);margin:16px 0 0}.contact .button{display:inline-block;white-space:nowrap}
-    footer{height:72px;display:flex;align-items:center;justify-content:space-between;font-size:10px;color:var(--muted)}.socials{display:flex;gap:20px}.socials a:hover{color:var(--green)}
-    @media(max-width:700px){.wrap{width:calc(100% - 40px)}header{height:70px}nav{gap:16px}.availability{display:none}.hero{padding:70px 0 68px;grid-template-columns:1fr;gap:36px}.hero-note{max-width:260px;margin-left:auto}.projects{grid-template-columns:1fr;row-gap:34px;padding-bottom:70px}.visual{height:270px}.about{grid-template-columns:1fr;gap:26px;padding:55px 0}.contact-inner{align-items:start;flex-direction:column}.contact .button{margin-top:6px}#experience>div:last-child{grid-template-columns:1fr!important;gap:20px!important}}
-    @media(max-width:410px){nav{gap:11px;font-size:11px}.brand{font-size:12px}.hero h1{font-size:56px}.visual{height:235px}}
-  </style>
-</head>
-<body>
-  <header class="wrap">
-    <a class="brand" href="#top">VIKAS SRIVASTAVA</a>
-    <nav aria-label="Main navigation"><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
-    <div class="availability"><i class="dot"></i> Available for select projects</div>
-  </header>
-  <main id="top">
-    <section class="hero wrap">
-      <div><p class="eyebrow">Frontend developer · Pune, India</p><h1>Building better<br><em>digital experiences.</em></h1><p class="intro">I’m Vikas, a frontend-focused software engineer with 5+ years of experience building responsive web and mobile applications. I turn complex product needs into fast, reliable interfaces with React, React Native, and TypeScript.</p><div class="actions"><a class="button" href="#work">Explore my work&nbsp; ↘</a><a class="text-link" href="mailto:vikash.sriva012@gmail.com">Get in touch</a></div></div>
-      <aside class="hero-note"><strong>What I bring</strong>Reusable UI systems, thoughtful API integration, and measurable performance improvements. BridgeNext Excellence Award, 2022–2023.</aside>
-    </section>
-    <section id="work" class="wrap">
-      <div class="section-head"><h2>Selected work</h2><p>Product experiences · Web and mobile</p></div>
-      <div class="projects">
-        <article class="project"><div class="visual v1"><div class="mock"><i class="mock-top"></i><div class="mock-title">Build together.<br>Ship confidently.</div><div class="mock-lines"><i class="m-green"></i><i></i><i></i></div></div></div><div class="project-meta"><div><h3>Devcollabs — developer collaboration</h3><p>React · Next.js · Node.js · JWT auth</p></div><span class="year">01</span></div></article>
-        <article class="project"><div class="visual v2"><div class="mock"><i class="mock-top"></i><div class="mock-title">Know where<br>your money goes.</div><div class="mock-lines"><i class="m-green"></i><i></i></div></div></div><div class="project-meta"><div><h3>User Expenses — expense management</h3><p>Responsive dashboards · CRUD · Reports</p></div><span class="year">02</span></div></article>
-        <article class="project"><div class="visual v3"><div class="mock"><i class="mock-top"></i><div class="mock-title">Move freight.<br>Move faster.</div><div class="mock-lines"><i class="m-green"></i><i></i><i></i></div></div></div><div class="project-meta"><div><h3>Mastery TMS — transport management</h3><p>React · React Native · GraphQL · TypeScript</p></div><span class="year">03</span></div></article>
-        <article class="project"><div class="visual v4"><div class="mock"><i class="mock-top"></i><div class="mock-title">Skip the line.<br>Enjoy the stay.</div><div class="mock-lines"><i class="m-green"></i><i></i></div></div></div><div class="project-meta"><div><h3>MGM Resorts — smart queue system</h3><p>React · Redux Hooks · Jest · Cypress</p></div><span class="year">04</span></div></article>
-      </div>
-    </section>
-    <section id="about" class="about wrap"><div><p class="eyebrow">A bit about me</p><h2>Fast interfaces.<br>Solid foundations.</h2></div><div class="about-copy"><p>I’m Vikas Srivastava, a frontend-focused software engineer with 5+ years of experience across web and mobile product development. At BridgeNext, I built and maintained React and React Native experiences for Mastery TMS, working across the full software development life cycle.</p><p>I focus on reusable components, accessible responsive UI, and reliable integrations with GraphQL and REST APIs. My performance work helped reduce application latency by 50% and improve query efficiency by 60%. I’ve also delivered smart queue management experiences for MGM Resorts through Tekishub Consulting Services.</p><div class="skills"><span>React.js</span><span>React Native</span><span>TypeScript</span><span>Next.js</span><span>Redux Toolkit</span><span>GraphQL &amp; Apollo</span><span>Jest &amp; Cypress</span><span>Node.js</span><span>PostgreSQL</span><span>Agile / Scrum</span></div></div></section>
-    <section id="experience" class="wrap" style="padding:0 0 62px"><div class="section-head"><h2>Experience &amp; education</h2><p>Selected background</p></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;padding-top:22px"><div><p style="font-size:13px;font-weight:600;margin:0 0 6px">Senior Software Development Engineer · BridgeNext</p><p style="font-size:11px;color:#777d76;line-height:1.7;margin:0">Mastery Transport Management System · Jul 2021 – Jun 2026<br>React, React Native, TypeScript, GraphQL, NestJS<br>BridgeNext Excellence Award, 2022–2023</p><p style="font-size:13px;font-weight:600;margin:23px 0 6px">React Developer · Tekishub Consulting Services</p><p style="font-size:11px;color:#777d76;line-height:1.7;margin:0">Client: Publicis Sapient · Dec 2020 – May 2021<br>MGM Resorts Line Buster &amp; Smart Queue Management</p></div><div><p style="font-size:13px;font-weight:600;margin:0 0 6px">Bachelor of Engineering</p><p style="font-size:11px;color:#777d76;line-height:1.7;margin:0">Annamalai University · 2013–2017</p><p style="font-size:13px;font-weight:600;margin:23px 0 6px">Diploma in Oracle SQL Developer</p><p style="font-size:11px;color:#777d76;line-height:1.7;margin:0">Oracle Database, SQL, and relational database concepts · 2020</p></div></div></section>
-    <section id="contact" class="contact"><div class="wrap contact-inner"><div><p class="eyebrow">Have something in mind?</p><h2>Let’s build something<br>people love to use.</h2><p>For opportunities, collaborations, or a good conversation.</p></div><a class="button" href="mailto:vikash.sriva012@gmail.com">vikash.sriva012@gmail.com&nbsp; ↗</a></div></section>
-  </main>
-  <footer class="wrap"><span>© 2026 VIKAS SRIVASTAVA</span><div class="socials"><a href="https://www.linkedin.com/in/vikas-srivastava-0a6221139">LinkedIn</a><a href="https://github.com/vini7707">GitHub</a><a href="#top">Back to top ↑</a></div></footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#10110f" />
+    <meta name="description" content="Vikas Srivastava is a frontend-focused software engineer with 5+ years of experience building responsive web and mobile products with React, React Native, TypeScript, and GraphQL." />
+    <title>Vikas Srivastava — Frontend Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
