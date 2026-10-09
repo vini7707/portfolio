@@ -37,7 +37,7 @@ function App() {
   return (
     <>
       <header className="topbar">
-        <a className="wordmark" href="#home" onClick={closeMenu}><span className="mark">V</span><span>VIKAS<span className="wordmark-light">.DEV</span></span></a>
+        <a className="wordmark" href="#home" onClick={closeMenu}><span className="mark">V</span><span>VIKAS SRIVASTAVA</span></a>
         <button className="menu-toggle" aria-label="Toggle navigation" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? 'CLOSE −' : 'MENU +'}</button>
         <nav ref={navRef} className={menuOpen ? 'nav nav-open' : 'nav'} aria-label="Main navigation">
           <a href="#work" onClick={closeMenu}>WORK <span>01</span></a><a href="#about" onClick={closeMenu}>ABOUT <span>02</span></a><a href="#contact" onClick={closeMenu}>CONTACT <span>03</span></a>
@@ -47,9 +47,9 @@ function App() {
 
       <main id="home">
         <section className="hero">
-          <div className="hero-top"><p className="eyebrow">FRONTEND DEVELOPER <span>—</span> REACT · REACT NATIVE</p><p className="eyebrow hero-date">PORTFOLIO / 2026</p></div>
+          <div className="hero-top"><p className="eyebrow">SENIOR SOFTWARE DEVELOPER <span>—</span> FRONTEND</p><p className="eyebrow hero-date">PORTFOLIO / 2026</p></div>
           <div className="hero-title-wrap"><div className="hero-title"><h1>BUILDING<br /><span className="outline">BETTER</span> <span className="accent">PRODUCTS.</span></h1></div>
-            <div className="hero-aside"><div className="orbit"><span>✳</span><i /><i /><i /></div><p>Frontend engineer with 5+ years building responsive web and mobile applications, reusable interfaces, and API-connected product experiences.</p><a href="#work" className="text-link">EXPLORE SELECTED WORK <Arrow /></a></div>
+            <div className="hero-aside"><div className="orbit"><span>✳</span><i /><i /><i /></div><p>Senior software developer with 5+ years building responsive web and mobile applications, reusable interfaces, and API-connected product experiences.</p><a href="#work" className="text-link">EXPLORE SELECTED WORK <Arrow /></a></div>
           </div>
           <div className="hero-bottom"><span>REACT · TYPESCRIPT · GRAPHQL</span><span>WEB & MOBILE PRODUCT DELIVERY</span><span>↓ &nbsp; 01 / 04</span></div>
         </section>
@@ -80,7 +80,7 @@ function App() {
 
         <section className="contact section" id="contact"><p className="eyebrow">GET IN TOUCH <span>—</span> 03</p><div className="contact-main"><h2>Let’s build<br />something <em>useful.</em></h2><a href="mailto:vikash.sriva012@gmail.com" className="contact-link">EMAIL VIKAS <Arrow diagonal /></a></div><div className="contact-details"><a href="mailto:vikash.sriva012@gmail.com">vikash.sriva012@gmail.com</a><a href="tel:+916394376600">+91 63943 76600</a><a href="https://www.linkedin.com/in/vikas-srivastava-0a6221139" target="_blank" rel="noreferrer">LINKEDIN <Arrow diagonal /></a><a href="https://github.com/vini7707" target="_blank" rel="noreferrer">GITHUB <Arrow diagonal /></a></div></section>
       </main>
-      <footer><a className="wordmark" href="#home"><span className="mark">V</span><span>VIKAS<span className="wordmark-light">.DEV</span></span></a><span>DESIGNED & BUILT WITH CARE · © 2026</span><a href="#home">BACK TO TOP ↑</a></footer>
+      <footer><a className="wordmark" href="#home"><span className="mark">V</span><span>VIKAS SRIVASTAVA</span></a><span>DESIGNED & BUILT WITH CARE · © 2026</span><a href="#home">BACK TO TOP ↑</a></footer>
     </>
   )
 }
