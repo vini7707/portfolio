@@ -36,11 +36,11 @@ function App() {
 
   return (
     <>
-      <header className="topbar">
+      <header className={menuOpen ? 'topbar topbar-open' : 'topbar'}>
         <a className="wordmark" href="#home" onClick={closeMenu}><span className="mark">V</span><span>VIKAS SRIVASTAVA</span></a>
         <button className="menu-toggle" aria-label="Toggle navigation" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? 'CLOSE −' : 'MENU +'}</button>
         <nav ref={navRef} className={menuOpen ? 'nav nav-open' : 'nav'} aria-label="Main navigation">
-          <a href="#work" onClick={closeMenu}>WORK <span>01</span></a><a href="#about" onClick={closeMenu}>ABOUT <span>02</span></a><a href="#contact" onClick={closeMenu}>CONTACT <span>03</span></a>
+          <a href="#work">WORK <span>01</span></a><a href="#about">ABOUT <span>02</span></a><a href="#contact">CONTACT <span>03</span></a>
           <span className="availability"><i /> 5+ YEARS EXPERIENCE</span>
         </nav>
       </header>

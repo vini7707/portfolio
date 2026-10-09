@@ -42,4 +42,4 @@ footer>span{font-size:8px}
 @media(max-width:760px){.hero-title h1{font-size:clamp(50px,16vw,130px)}.skills-row{grid-template-columns:1fr}.skills-row .skills-grid{grid-template-columns:1fr;gap:16px}.education-row{grid-template-columns:1fr;gap:8px}.education-row p{padding-left:14px}}
 .topbar{position:sticky;top:0;z-index:50}
 main[id="home"],section[id]{scroll-margin-top:88px}
-@media(max-width:760px){main[id="home"],section[id]{scroll-margin-top:68px}}
+@media(max-width:760px){main[id="home"],section[id]{scroll-margin-top:68px}.topbar-open~main section[id]{scroll-margin-top:250px}}
